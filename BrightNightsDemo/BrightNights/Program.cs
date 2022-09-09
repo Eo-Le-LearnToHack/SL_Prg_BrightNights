@@ -64,30 +64,30 @@ namespace BrightNights
 
                     DateTime dtUserInputDateTime = new DateTime(userInputYear, userInputMonth, userInputDay);
 
-                    DateTime dtBrightBightsStart = new DateTime(userInputYear, 05, 05);
-                    DateTime dtBrightBightsEnd = new DateTime(userInputYear, 08, 08);
+                    DateTime dtBrightNightsStart = new DateTime(userInputYear, 05, 05);
+                    DateTime dtBrightNightsEnd = new DateTime(userInputYear, 08, 08);
 
-                    TimeSpan tsBrightBightsStart = dtBrightBightsStart - new DateTime(userInputYear, 01, 01);
-                    TimeSpan tsBrightBightsEnd = dtBrightBightsEnd - new DateTime(userInputYear, 01, 01);
+                    TimeSpan tsBrightNightsStart = dtBrightNightsStart - new DateTime(userInputYear, 01, 01);
+                    TimeSpan tsBrightNightsEnd = dtBrightNightsEnd - new DateTime(userInputYear, 01, 01);
                     TimeSpan tsUserInputDateTime = dtUserInputDateTime - new DateTime(userInputYear, 01, 01);
-                    TimeSpan tsBrightBightsStartNextYear = new DateTime(userInputYear + 1, 05, 05) - dtUserInputDateTime;
+                    TimeSpan tsBrightNightsStartNextYear = new DateTime(userInputYear + 1, 05, 05) - dtUserInputDateTime;
 
                     TimeSpan tsResult;
 
                     Console.WriteLine();
-                    if (tsUserInputDateTime < tsBrightBightsStart)
+                    if (tsUserInputDateTime < tsBrightNightsStart)
                     {
-                        tsResult = tsBrightBightsStart - tsUserInputDateTime;
+                        tsResult = tsBrightNightsStart - tsUserInputDateTime;
                         Console.WriteLine($"Din indtastede dato er {dtUserInputDateTime.ToLongDateString()}.\nDer er {tsResult.Days} dage til de lyse nætter.");
                     }
-                    else if (tsUserInputDateTime > tsBrightBightsEnd)
+                    else if (tsUserInputDateTime > tsBrightNightsEnd)
                     {
-                        tsResult = tsBrightBightsStartNextYear;
+                        tsResult = tsBrightNightsStartNextYear;
                         Console.WriteLine($"Din indtastede dato er {dtUserInputDateTime.ToLongDateString()}.\nDe lyse nætter er over. Der er {tsResult.Days} dage til de lyse nætter.");
                     }
                     else
                     {
-                        tsResult = tsBrightBightsEnd - tsUserInputDateTime;
+                        tsResult = tsBrightNightsEnd - tsUserInputDateTime;
                         Console.WriteLine($"Din indtastede dato er {dtUserInputDateTime.ToLongDateString()}.\nDu befinder dig i de lyse nætters periode. Der er {tsResult.Days} til de lyse nætter slutter.");
                     }
 
